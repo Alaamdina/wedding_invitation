@@ -148,15 +148,15 @@
     max-width:330px;margin-bottom:14px;opacity:.95;}
 
   /* ---- 3. intro ---- */
-  .intro{font-size:13.5px;line-height:1.95;color:var(--ivory);max-width:320px;font-weight:300;}
+  .intro{font-size:13.5px;line-height:1.95;color:var(--ivory);max-width:320px;font-weight:300;
+    margin-bottom:13px;}
+  .intro-2{margin-top:15px;margin-bottom:0;}
 
   .rule{display:flex;align-items:center;gap:9px;width:100%;max-width:300px;margin:10px 0;}
   .rule .ln{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,99,.6),transparent);}
   .rule .dot{width:4px;height:4px;transform:rotate(45deg);background:var(--gold);flex:none;}
 
   /* ---- 4. inviting family ---- */
-  .sec-title{font-family:var(--f-naskh);font-size:15px;letter-spacing:.2em;padding-right:.2em;
-    color:var(--gold);margin-bottom:11px;}
   .fam{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;width:100%;
     max-width:388px;}
   .fam::before{content:"";position:absolute;top:4px;bottom:4px;left:50%;width:1px;
@@ -166,8 +166,6 @@
   /* ---- 5. couple, side by side ---- */
   .couple{display:flex;align-items:stretch;width:100%;max-width:404px;}
   .c-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;padding:0 9px;}
-  .c-label{font-size:10.5px;letter-spacing:.26em;padding-right:.26em;color:var(--gold);
-    margin-bottom:5px;}
   .c-title{font-family:var(--f-naskh);font-size:14px;color:var(--ivory-dim);margin-bottom:6px;}
   .c-name{font-family:var(--f-disp);font-size:24px;font-weight:700;line-height:1.42;}
   .c-div{position:relative;width:1px;flex:none;align-self:stretch;
@@ -338,16 +336,11 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
       <!-- 2. verse -->
       <div class="verse reveal" style="animation-delay:1s">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا</div>
 
-      <!-- 3. introduction -->
-      <div class="intro reveal" style="animation-delay:1.14s">
-        تتشرف عائلة مدينة<br>بدعوة سيادتكم لمشاركتها فرحتها بحفل زفاف
-      </div>
+      <!-- 3. who is inviting -->
+      <div class="intro reveal" style="animation-delay:1.14s">تتشرف عائلة مدينة</div>
 
-      <div class="rule reveal" style="animation-delay:1.26s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
-
-      <!-- 4. inviting family -->
-      <div class="sec-title reveal" style="animation-delay:1.36s">الداعون لكم</div>
-      <div class="fam reveal" style="animation-delay:1.46s">
+      <!-- 4. family names (no heading) -->
+      <div class="fam reveal" style="animation-delay:1.26s">
         <span>الحاج خليل حلمي مدينة</span>
         <span>الحاج صابر حلمي مدينة</span>
         <span>الحاج أحمد خليل مدينة</span>
@@ -356,12 +349,14 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
         <span>الأستاذ يوسف صابر مدينة</span>
       </div>
 
-      <div class="rule reveal" style="animation-delay:1.58s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+      <!-- 5. the invitation sentence, now after the names -->
+      <div class="intro intro-2 reveal" style="animation-delay:1.44s">بدعوة سيادتكم لمشاركتها فرحتها بحفل زفاف</div>
+
+      <div class="rule reveal" style="animation-delay:1.56s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
 
       <!-- 5. couple, side by side -->
-      <div class="couple reveal" style="animation-delay:1.7s">
+      <div class="couple reveal" style="animation-delay:1.66s">
         <div class="c-col">
-          <div class="c-label">العريس</div>
           <div class="c-title">الباشمهندس</div>
           <div class="c-name foil">جمال عبد المحسن مدينة</div>
         </div>
@@ -371,16 +366,15 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
           </span>
         </div>
         <div class="c-col">
-          <div class="c-label">العروسة</div>
           <div class="c-title">الأستاذة</div>
           <div class="c-name foil">بسنت أحمد خليل مدينة</div>
         </div>
       </div>
 
-      <div class="rule reveal" style="animation-delay:1.86s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+      <div class="rule reveal" style="animation-delay:1.84s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
 
       <!-- 7 + 8. date, time, venue -->
-      <div class="infos reveal" style="animation-delay:1.96s">
+      <div class="infos reveal" style="animation-delay:1.94s">
         <div class="info">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3.3" y="5" width="17.4" height="15.4" rx="2.4" stroke="#D4AF63" stroke-width="1.3"/><path d="M3.3 9.8h17.4" stroke="#D4AF63" stroke-width="1.3"/><path d="M8 3v3.6M16 3v3.6" stroke="#D4AF63" stroke-width="1.3" stroke-linecap="round"/><circle cx="12" cy="15" r="1.7" fill="#EFDCAE"/></svg></span>
           <span><span class="k">الإثنين ٢١ سبتمبر</span><span class="s">من ٤:٠٠ إلى ٨:٠٠ مساءً</span></span>
@@ -391,11 +385,11 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
         </div>
       </div>
 
-      <div class="rule reveal" style="animation-delay:2.08s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+      <div class="rule reveal" style="animation-delay:2.06s"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
 
       <!-- 9. countdown -->
-      <div class="cd-label reveal" style="animation-delay:2.18s">يتبقى على الفرح</div>
-      <div class="boxes reveal" style="animation-delay:2.26s">
+      <div class="cd-label reveal" style="animation-delay:2.16s">يتبقى على الفرح</div>
+      <div class="boxes reveal" style="animation-delay:2.24s">
         <div class="cbox" id="b-days"><span class="cnum" id="cd-days">00</span><span class="cunit">الأيام</span></div>
         <div class="cbox" id="b-hours"><span class="cnum" id="cd-hours">00</span><span class="cunit">الساعات</span></div>
         <div class="cbox" id="b-mins"><span class="cnum" id="cd-mins">00</span><span class="cunit">الدقائق</span></div>
@@ -403,7 +397,7 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
       </div>
 
       <!-- 10. actions -->
-      <div class="actions reveal" style="animation-delay:2.4s">
+      <div class="actions reveal" style="animation-delay:2.38s">
         <a class="btn primary" href="https://maps.app.goo.gl/8x6zYdJiDqbXxsGG6" target="_blank" rel="noopener">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21.2s7.3-6.8 7.3-12A7.3 7.3 0 1 0 4.7 9.2c0 5.2 7.3 12 7.3 12Z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="9.3" r="2.5" stroke="currentColor" stroke-width="1.4"/></svg></span>
           <span>لوكيشن القاعة</span>
