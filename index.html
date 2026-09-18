@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوة زفاف</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep: #0E3B2E;
+    --deep-2: #0A2E24;
+    --gold: #C9A227;
+    --gold-light: #E8D28A;
+    --cream: #F6EFE1;
+    --cream-dim: #D9CEB3;
+    --maroon: #7A2331;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html, body{
+    width:100%;
+    min-height:100%;
+    background: var(--deep-2);
+  }
+
+  body{
+    font-family: 'Tajawal', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 24px 14px;
+    color: var(--cream);
+  }
+
+  .card{
+    position:relative;
+    width:100%;
+    max-width:480px;
+    background:
+      radial-gradient(120% 90% at 50% 0%, #134534 0%, var(--deep) 45%, var(--deep-2) 100%);
+    border-radius: 6px;
+    overflow:hidden;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,.55);
+  }
+
+  /* subtle background texture */
+  .card::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(201,162,39,0.035) 0px, rgba(201,162,39,0.035) 1px, transparent 1px, transparent 26px);
+    pointer-events:none;
+  }
+
+  .frame{
+    position:absolute;
+    inset: 18px;
+    border: 1px solid rgba(201,162,39,0.55);
+    border-radius: 3px;
+  }
+  .frame::before{
+    content:"";
+    position:absolute;
+    inset: 6px;
+    border: 1px solid rgba(201,162,39,0.28);
+    border-radius: 2px;
+  }
+
+  .corner{
+    position:absolute;
+    width:46px;
+    height:46px;
+    opacity:.9;
+  }
+  .corner svg{ width:100%; height:100%; display:block; }
+  .corner.tl{ top:8px; right:8px; }
+  .corner.tr{ top:8px; left:8px; transform: scaleX(-1); }
+  .corner.bl{ bottom:8px; right:8px; transform: scaleY(-1); }
+  .corner.br{ bottom:8px; left:8px; transform: scale(-1,-1); }
+
+  .content{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding: 52px 32px 60px;
+    gap: 0;
+  }
+
+  .motif{
+    width:52px;
+    height:52px;
+    margin-bottom: 15px;
+    opacity: .95;
+  }
+
+  .eyebrow{
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: var(--gold-light);
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .intro{
+    font-size: 14px;
+    color: var(--cream-dim);
+    line-height: 1.85;
+    max-width: 296px;
+    margin-bottom: 20px;
+  }
+
+  .divider{
+    width: 120px;
+    height: 14px;
+    margin: 4px 0 22px;
+    opacity: .85;
+  }
+  .divider svg{ width:100%; height:100%; }
+
+  .groom-label, .bride-label{
+    font-size: 13px;
+    color: var(--cream-dim);
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  .name{
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 29px;
+    line-height: 1.35;
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+
+  .connector{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    margin: 16px 0;
+    color: var(--gold);
+  }
+  .connector .line{
+    width: 34px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .connector .word{
+    font-family:'Aref Ruqaa', serif;
+    font-size: 20px;
+  }
+
+  .bride-name{
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 25px;
+    color: var(--cream);
+    line-height: 1.35;
+  }
+  .bride-name b{
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 29px;
+  }
+
+  .details{
+    margin-top: 28px;
+    display:flex;
+    flex-direction:column;
+    gap: 9px;
+    align-items:center;
+  }
+
+  .detail-row{
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--cream);
+  }
+  .detail-row .icon{
+    width:16px; height:16px;
+    opacity:.9;
+  }
+  .detail-row .icon svg{ width:100%; height:100%; }
+  .detail-row .label{
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .venue{
+    font-size: 13px;
+    color: var(--cream-dim);
+    margin-top: 2px;
+  }
+
+  .countdown{
+    margin-top: 24px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 10px;
+  }
+  .countdown-label{
+    font-size: 12.5px;
+    color: var(--gold-light);
+    letter-spacing: .06em;
+  }
+  .countdown-boxes{
+    display:flex;
+    gap: 10px;
+    direction: ltr;
+  }
+  .cbox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width: 52px;
+    padding: 8px 0 7px;
+    border: 1px solid rgba(201,162,39,0.45);
+    border-radius: 6px;
+    background: rgba(201,162,39,0.06);
+  }
+  .cnum{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+  .cunit{
+    font-size: 10px;
+    color: var(--cream-dim);
+    margin-top: 3px;
+  }
+
+  .closing{
+    margin-top: 22px;
+    font-size: 12.5px;
+    letter-spacing: .04em;
+    color: var(--cream-dim);
+  }
+
+  .map-btn{
+    margin-top: 16px;
+    display:inline-flex;
+    align-items:center;
+    gap: 7px;
+    padding: 9px 20px;
+    border: 1px solid rgba(201,162,39,0.55);
+    border-radius: 999px;
+    color: var(--gold-light);
+    font-size: 13px;
+    text-decoration:none;
+    letter-spacing:.02em;
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+  }
+  .map-btn:hover{
+    background: rgba(201,162,39,0.12);
+    border-color: var(--gold);
+  }
+  .map-btn:active{ transform: scale(.97); }
+  .map-btn .icon{ width:14px; height:14px; }
+  .map-btn .icon svg{ width:100%; height:100%; }
+
+  @media (max-width: 360px){
+    .name{ font-size: 25px; }
+    .content{ padding: 44px 20px 56px; }
+  }
+
+  /* ---------- envelope intro ---------- */
+
+  .envelope-overlay{
+    position:absolute;
+    inset:0;
+    z-index: 20;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(120% 90% at 50% 0%, #134534 0%, var(--deep) 45%, var(--deep-2) 100%);
+  }
+
+  .envelope{
+    position:relative;
+    width: 226px;
+    height: 156px;
+    opacity: 0;
+    transform: translateY(70px);
+    perspective: 800px;
+  }
+
+  .env-back{
+    position:absolute;
+    inset:0;
+    background: linear-gradient(160deg, #16513c, #0d3226);
+    border: 1px solid rgba(201,162,39,0.5);
+    border-radius: 3px;
+  }
+  .env-back::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height: 60%;
+    background: linear-gradient(155deg, transparent 49.5%, rgba(0,0,0,.18) 50%, transparent 50.5%),
+                linear-gradient(205deg, transparent 49.5%, rgba(0,0,0,.18) 50%, transparent 50.5%);
+  }
+
+  .env-flap{
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:64%;
+    background: linear-gradient(160deg, #1a5a41, #0f3d2e);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    border: 1px solid rgba(201,162,39,0.5);
+    border-bottom: none;
+    transform-origin: top center;
+    backface-visibility: hidden;
+  }
+
+  .env-seal{
+    position:absolute;
+    top: 62%;
+    left:50%;
+    transform: translateX(-50%);
+    width:50px; height:50px;
+    border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, #eeddA0, #b8891f 72%);
+    box-shadow: 0 3px 10px rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 3px;
+    font-family:'Aref Ruqaa', serif;
+    font-weight:700;
+    font-size:16px;
+    color:#3d2b0a;
+    z-index:2;
+  }
+  .env-seal .heart{
+    font-size: 12px;
+    line-height:1;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+
+    .envelope{
+      animation: envIn 1.6s cubic-bezier(.16,.75,.24,1) .3s forwards;
+    }
+    @keyframes envIn{
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    .env-seal{
+      animation: sealBreak .6s ease 2.6s forwards;
+    }
+    @keyframes sealBreak{
+      to{ opacity:0; transform: translateX(-50%) scale(.4) rotate(18deg); }
+    }
+
+    .env-flap{
+      animation: flapOpen 1.8s cubic-bezier(.4,0,.2,1) 2.7s forwards;
+    }
+    @keyframes flapOpen{
+      to{ transform: rotateX(-172deg); }
+    }
+
+    .envelope-overlay{
+      animation: overlayOut 1.1s ease 4.7s forwards;
+    }
+    @keyframes overlayOut{
+      to{ opacity:0; visibility:hidden; }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .envelope-overlay{ display:none; }
+  }
+
+
+
+  @media (prefers-reduced-motion: no-preference){
+
+    .reveal{
+      opacity: 0;
+      transform: translateY(16px);
+      animation: revealUp 1.15s cubic-bezier(.22,.9,.3,1) forwards;
+    }
+    @keyframes revealUp{
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    .motif{ animation-delay: 4.9s; }
+    .eyebrow{ animation-delay: 5.15s; }
+    .intro{ animation-delay: 5.34s; }
+    .groom-label{ animation-delay: 5.56s; }
+    .name{ animation-delay: 5.72s; }
+    .connector{ animation-delay: 6.02s; }
+    .bride-label{ animation-delay: 6.2s; }
+    .bride-name{ animation-delay: 6.36s; }
+    .details{ animation-delay: 6.66s; }
+    .countdown{ animation-delay: 6.86s; }
+    .closing{ animation-delay: 7.14s; }
+    .map-btn{ animation-delay: 7.32s; }
+
+    .frame{
+      opacity: 0;
+      animation: frameIn 1.1s ease-out 4.75s forwards;
+    }
+    @keyframes frameIn{
+      from{ opacity:0; transform: scale(.97); }
+      to{ opacity:1; transform: scale(1); }
+    }
+
+    .corner{
+      opacity: 0;
+      animation: cornerIn .8s ease-out 4.9s forwards;
+    }
+    @keyframes cornerIn{
+      from{ opacity:0; }
+      to{ opacity:.9; }
+    }
+
+    .motif svg{
+      transform-origin: 27px 27px;
+      animation: motifSpin 22s linear infinite;
+    }
+    @keyframes motifSpin{
+      from{ transform: rotate(0deg); }
+      to{ transform: rotate(360deg); }
+    }
+
+    .connector .line{
+      position:relative;
+      overflow:hidden;
+    }
+    .connector .line::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, transparent, rgba(232,210,138,.9), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 3.2s ease-in-out 7s infinite;
+    }
+    @keyframes shimmer{
+      0%, 60%{ transform: translateX(-100%); }
+      100%{ transform: translateX(100%); }
+    }
+
+    .card::after{
+      content:"";
+      position:absolute; inset:0;
+      pointer-events:none;
+      background: radial-gradient(circle at 50% 40%, rgba(232,210,138,0.10), transparent 60%);
+      opacity: 0;
+      animation: glow 6s ease-in-out 6.8s infinite;
+    }
+    @keyframes glow{
+      0%, 100%{ opacity: 0; }
+      50%{ opacity: 1; }
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="envelope-overlay">
+      <div class="envelope">
+        <div class="env-back"></div>
+        <div class="env-flap"></div>
+        <div class="env-seal">G<span class="heart">♥</span>B</div>
+      </div>
+    </div>
+
+    <div class="frame"></div>
+
+    <div class="corner tl"><svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 44C2 20 20 2 44 2" stroke="#C9A227" stroke-width="1"/><path d="M2 30C2 14.5 14.5 2 30 2" stroke="#C9A227" stroke-width="1" opacity="0.6"/><circle cx="2" cy="44" r="2.5" fill="#C9A227"/></svg></div>
+    <div class="corner tr"><svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 44C2 20 20 2 44 2" stroke="#C9A227" stroke-width="1"/><path d="M2 30C2 14.5 14.5 2 30 2" stroke="#C9A227" stroke-width="1" opacity="0.6"/><circle cx="2" cy="44" r="2.5" fill="#C9A227"/></svg></div>
+    <div class="corner bl"><svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 44C2 20 20 2 44 2" stroke="#C9A227" stroke-width="1"/><path d="M2 30C2 14.5 14.5 2 30 2" stroke="#C9A227" stroke-width="1" opacity="0.6"/><circle cx="2" cy="44" r="2.5" fill="#C9A227"/></svg></div>
+    <div class="corner br"><svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 44C2 20 20 2 44 2" stroke="#C9A227" stroke-width="1"/><path d="M2 30C2 14.5 14.5 2 30 2" stroke="#C9A227" stroke-width="1" opacity="0.6"/><circle cx="2" cy="44" r="2.5" fill="#C9A227"/></svg></div>
+
+    <div class="content">
+
+      <div class="motif reveal">
+        <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="27" cy="27" r="3" fill="#E8D28A"/>
+          <g stroke="#C9A227" stroke-width="1">
+            <path d="M27 6 C31 15 31 15 27 27 C23 15 23 15 27 6Z"/>
+            <path d="M27 48 C31 39 31 39 27 27 C23 39 23 39 27 48Z"/>
+            <path d="M6 27 C15 23 15 23 27 27 C15 31 15 31 6 27Z"/>
+            <path d="M48 27 C39 23 39 23 27 27 C39 31 39 31 48 27Z"/>
+            <path d="M12 12 C18 17 18 17 27 27 C18 21 18 21 12 12Z" opacity="0.6"/>
+            <path d="M42 42 C36 37 36 37 27 27 C36 33 36 33 42 42Z" opacity="0.6"/>
+            <path d="M42 12 C36 17 36 17 27 27 C36 21 36 21 42 12Z" opacity="0.6"/>
+            <path d="M12 42 C18 37 18 37 27 27 C18 33 18 33 12 42Z" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="eyebrow reveal">دعوة زفاف</div>
+
+      <div class="intro reveal">
+        يسعدنا ويشرّفنا دعوتكم لمشاركتنا فرحتنا<br>
+        بحضور حفل الزفاف
+      </div>
+
+      <div class="groom-label reveal">العريس</div>
+      <div class="name reveal">الباشمهندس<br>جمال عبد المحسن مدينة</div>
+
+      <div class="connector reveal">
+        <span class="line"></span>
+        <span class="word">و</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="bride-label reveal">كريمة الحاج</div>
+      <div class="bride-name reveal"><b>أحمد خليل مدينة</b></div>
+
+      <div class="details reveal">
+        <div class="detail-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="5" width="17" height="15" rx="1.5" stroke="#E8D28A" stroke-width="1.3"/><path d="M3.5 9.5H20.5" stroke="#E8D28A" stroke-width="1.3"/><path d="M8 3V6.5" stroke="#E8D28A" stroke-width="1.3" stroke-linecap="round"/><path d="M16 3V6.5" stroke="#E8D28A" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+          <span class="label">يوم الإثنين</span>
+          <span>٢١ سبتمبر</span>
+        </div>
+        <div class="detail-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.5 19 9.5C19 5.35786 15.6421 2 12 2C8.35786 2 5 5.35786 5 9.5C5 14.5 12 21 12 21Z" stroke="#E8D28A" stroke-width="1.3"/><circle cx="12" cy="9.5" r="2.3" stroke="#E8D28A" stroke-width="1.3"/></svg></span>
+          <span class="label">قاعة الميرلاند</span>
+        </div>
+        <div class="venue">الواسطى</div>
+      </div>
+
+      <div class="countdown reveal">
+        <div class="countdown-label">تبقى على الفرح</div>
+        <div class="countdown-boxes">
+          <div class="cbox"><span class="cnum" id="cd-days">00</span><span class="cunit">يوم</span></div>
+          <div class="cbox"><span class="cnum" id="cd-hours">00</span><span class="cunit">ساعة</span></div>
+          <div class="cbox"><span class="cnum" id="cd-mins">00</span><span class="cunit">دقيقة</span></div>
+          <div class="cbox"><span class="cnum" id="cd-secs">00</span><span class="cunit">ثانية</span></div>
+        </div>
+      </div>
+
+      <div class="closing reveal">في انتظار حضوركم الكريم لإتمام فرحتنا</div>
+
+      <a class="map-btn reveal" href="https://maps.app.goo.gl/8x6zYdJiDqbXxsGG6" target="_blank" rel="noopener">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 19 14.5 19 9.5C19 5.35786 15.6421 2 12 2C8.35786 2 5 5.35786 5 9.5C5 14.5 12 21 12 21Z" stroke="#E8D28A" stroke-width="1.3"/><circle cx="12" cy="9.5" r="2.3" stroke="#E8D28A" stroke-width="1.3"/></svg></span>
+        <span>لوكيشن القاعة</span>
+      </a>
+
+    </div>
+  </div>
+
+<script>
+  // Wedding date/time — Monday 21 Sept 2026, 7:00 PM Cairo time
+  var targetTime = new Date('2026-09-21T19:00:00+02:00').getTime();
+
+  function updateCountdown(){
+    var now = new Date().getTime();
+    var diff = targetTime - now;
+    var d = document.getElementById('cd-days');
+    var h = document.getElementById('cd-hours');
+    var m = document.getElementById('cd-mins');
+    var s = document.getElementById('cd-secs');
+    if(!d) return;
+    if(diff <= 0){
+      d.textContent = '00'; h.textContent = '00'; m.textContent = '00'; s.textContent = '00';
+      return;
+    }
+    var days = Math.floor(diff/86400000);
+    var hours = Math.floor((diff%86400000)/3600000);
+    var mins = Math.floor((diff%3600000)/60000);
+    var secs = Math.floor((diff%60000)/1000);
+    d.textContent = String(days).padStart(2,'0');
+    h.textContent = String(hours).padStart(2,'0');
+    m.textContent = String(mins).padStart(2,'0');
+    s.textContent = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
