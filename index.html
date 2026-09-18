@@ -69,7 +69,7 @@
 
   /* ---------------- the card ---------------- */
   .card{
-    position:relative;width:452px;border-radius:10px;overflow:hidden;
+    position:relative;width:470px;border-radius:10px;overflow:hidden;
     background:
       radial-gradient(135% 85% at 50% -8%,#10314A 0%,var(--navy-2) 38%,var(--navy) 70%,var(--navy-3) 100%);
     box-shadow:
@@ -113,7 +113,7 @@
   @keyframes cornerPop{from{opacity:0;}to{opacity:.9;}}
 
   .content{position:relative;z-index:7;display:flex;flex-direction:column;align-items:center;
-    text-align:center;padding:26px 26px 64px;}
+    text-align:center;padding:22px 26px 64px;}
 
   .reveal{opacity:0;transform:translateY(15px);}
   body.revealed .reveal{animation:up 1s cubic-bezier(.22,.9,.3,1) forwards;}
@@ -133,7 +133,7 @@
   @keyframes foil{to{background-position:-280% 0;}}
 
   /* ---- 1. emblem ---- */
-  .emblem{width:64px;height:64px;position:relative;margin-bottom:11px;}
+  .emblem{width:56px;height:56px;position:relative;margin-bottom:9px;}
   .emblem svg{width:100%;height:100%;overflow:visible;}
   .em-a{animation:spin 34s linear infinite;transform-origin:50% 50%;}
   .em-b{animation:spin 52s linear infinite reverse;transform-origin:50% 50%;}
@@ -144,27 +144,27 @@
   @keyframes halo{0%,100%{opacity:.3;transform:scale(.9);}50%{opacity:.9;transform:scale(1.1);}}
 
   /* ---- 2. verse ---- */
-  .verse{font-family:var(--f-naskh);font-size:15px;line-height:1.95;color:var(--gold-pale);
-    max-width:330px;margin-bottom:14px;opacity:.95;}
+  .verse{font-family:var(--f-naskh);font-size:15px;line-height:1.8;color:var(--gold-pale);
+    max-width:400px;margin-bottom:11px;opacity:.95;}
 
   /* ---- 3. intro ---- */
   .intro{font-size:13.5px;line-height:1.95;color:var(--ivory);max-width:320px;font-weight:300;
-    margin-bottom:13px;}
-  .intro-2{margin-top:15px;margin-bottom:0;}
+    margin-bottom:11px;}
+  .intro-2{margin-top:13px;margin-bottom:0;}
 
-  .rule{display:flex;align-items:center;gap:9px;width:100%;max-width:300px;margin:10px 0;}
+  .rule{display:flex;align-items:center;gap:9px;width:100%;max-width:300px;margin:9px 0;}
   .rule .ln{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,99,.6),transparent);}
   .rule .dot{width:4px;height:4px;transform:rotate(45deg);background:var(--gold);flex:none;}
 
   /* ---- 4. inviting family ---- */
-  .fam{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;width:100%;
-    max-width:388px;}
+  .fam{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:7px 18px;width:100%;
+    max-width:406px;}
   .fam::before{content:"";position:absolute;top:4px;bottom:4px;left:50%;width:1px;
     background:linear-gradient(180deg,transparent,rgba(212,175,99,.34),transparent);}
   .fam span{font-size:13.5px;line-height:1.5;color:var(--ivory);font-weight:300;opacity:.95;}
 
   /* ---- 5. couple, side by side ---- */
-  .couple{display:flex;align-items:stretch;width:100%;max-width:404px;}
+  .couple{display:flex;align-items:stretch;width:100%;max-width:420px;}
   .c-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;padding:0 9px;}
   .c-title{font-family:var(--f-naskh);font-size:14px;color:var(--ivory-dim);margin-bottom:6px;}
   .c-name{font-family:var(--f-disp);font-size:24px;font-weight:700;line-height:1.42;}
@@ -334,7 +334,7 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
       </div>
 
       <!-- 2. verse -->
-      <div class="verse reveal" style="animation-delay:1s">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا</div>
+      <div class="verse reveal" style="animation-delay:1s">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</div>
 
       <!-- 3. who is inviting -->
       <div class="intro reveal" style="animation-delay:1.14s">تتشرف عائلة مدينة</div>
@@ -346,6 +346,10 @@ setTimeout(function(){document.body.classList.add("revealed");var e=document.get
         <span>الحاج أحمد خليل مدينة</span>
         <span>الأستاذ حلمي خليل مدينة</span>
         <span>الأستاذ محمد عبد المحسن مدينة</span>
+        <span>المستشار عادل عبد المحسن مدينة</span>
+        <span>الأستاذ محمود خليل مدينة</span>
+        <span>الأستاذ إبراهيم صابر مدينة</span>
+        <span>الأستاذ سامح عبد المحسن مدينة</span>
         <span>الأستاذ يوسف صابر مدينة</span>
       </div>
 
